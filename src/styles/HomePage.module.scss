@@ -15,7 +15,10 @@
       rgba(36, 36, 36, 0) 68%
     );
   }
-  .playingNow {
+  .playingNowDesktop {
+    display: none;
+  }
+  .playingNowMobile {
     width: 100vw;
     height: 100vh;
     background-color: black;
@@ -35,9 +38,21 @@
       justify-content: space-between;
       flex-direction: row;
       background: transparent;
-      .playingNow {
-        height: 100vh;
-        object-position: 0% 30%;
+      .playingNowMobile {
+        display: none;
+      }
+      .playingNowDesktop {
+        display: block;
+        width: 100vw;
+        height: calc(100vh + 140px);
+        background-color: black;
+        background-position: 0% 30%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        z-index: -9;
       }
     }
   }
