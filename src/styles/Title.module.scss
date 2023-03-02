@@ -1,0 +1,87 @@
+@import "./variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: toRem(20px);
+  padding-right: toRem(20px);
+  margin-top: toRem(280px);
+  .kicker {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: toRem(20px);
+    line-height: toRem(20px);
+    letter-spacing: toRem(4px);
+
+    color: #ffffff;
+  }
+  .title {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 700;
+    font-size: toRem(76px);
+    line-height: 102%;
+
+    text-align: center;
+    letter-spacing: toRem(12px);
+    text-transform: uppercase;
+
+    color: #64eebc;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(10px);
+      width: toRem(248px);
+      margin-top: toRem(16px);
+      height: toRem(56px);
+      background-color: #242424;
+      font-weight: 400;
+      font-size: toRem(18px);
+      line-height: toRem(22px);
+      letter-spacing: toRem(4px);
+    }
+    .mylist {
+      background: rgba(36, 36, 36, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+//Desktop version
+@media (min-width: 700px) {
+  .container {
+    margin-left: toRem(60px);
+    padding: 0;
+    .title {
+      font-size: toRem(120px);
+      line-height: toRem(100px);
+      letter-spacing: toRem(16px);
+      margin-top: toRem(20px);
+    }
+    .kicker {
+      font-weight: 400;
+      font-size: toRem(20px);
+      line-height: toRem(20px);
+      letter-spacing: toRem(4px);
+    }
+    align-items: flex-start;
+    justify-content: flex-start;
+    .options {
+      margin-top: toRem(30px);
+      gap: toRem(20px);
+      flex-direction: row;
+      background: transparent;
+      .playingNow {
+        height: 100vh;
+        object-position: 0% 30%;
+      }
+    }
+  }
+}

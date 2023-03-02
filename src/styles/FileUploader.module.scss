@@ -1,0 +1,212 @@
+@import "./variables.scss";
+
+.fileUploaderFinish,
+.fileUploader {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: toRem(90px) 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  background-color: #242424;
+  .addMovie {
+    margin-top: toRem(148px);
+    color: #64eebc;
+    font-style: normal;
+    font-weight: 500;
+    font-size: toRem(22px);
+    line-height: toRem(22px);
+    text-align: center;
+    letter-spacing: toRem(4px);
+  }
+  .uploaderDropzone {
+    p {
+      font-weight: 400;
+      font-size: toRem(16px);
+      line-height: toRem(19px);
+      letter-spacing: toRem(4px);
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(10px);
+    border: 2px #ffff dotted;
+    height: toRem(81px);
+    margin: toRem(24px);
+    width: toRem(327px);
+  }
+  .titleInput {
+    color: #ffff;
+    text-transform: uppercase;
+
+    width: toRem(248px);
+    text-align: center;
+    font-weight: 400;
+    font-size: toRem(16px);
+    line-height: toRem(19px);
+    text-align: center;
+    letter-spacing: toRem(4px);
+    border: none;
+    border-bottom: 2px solid #ffff;
+    background-color: transparent;
+    padding-bottom: toRem(8px);
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    .upload,
+    .exit {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(10px);
+      width: toRem(248px);
+      margin-top: toRem(16px);
+      height: toRem(56px);
+      font-weight: 400;
+      border: none;
+      text-transform: uppercase;
+
+      font-size: toRem(18px);
+      line-height: toRem(22px);
+      letter-spacing: toRem(2px);
+    }
+    .upload {
+      background: #ffffff;
+      color: #242424;
+    }
+    .exit {
+      background: transparent;
+      border: 2px #ffffff solid;
+      color: #ffffff;
+    }
+  }
+  .loadingBarSuccess,
+  .loadingBarError {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(16px);
+    p {
+      font-family: "Bebas Neue";
+      font-style: normal;
+      font-weight: 500;
+      font-size: toRem(16px);
+      line-height: toRem(14px);
+      letter-spacing: toRem(4px);
+    }
+    .submsg {
+      align-self: flex-end;
+      float: right;
+    }
+  }
+
+  .loadingBarError {
+    .error {
+      width: toRem(327px);
+      height: toRem(8px);
+      background-color: #ff0000;
+    }
+  }
+  .loadingBarSuccess {
+    .success {
+      width: toRem(327px);
+      height: toRem(8px);
+      background-color: #64eebc;
+    }
+    .submsg {
+      color: #64eebc;
+    }
+  }
+  .msg {
+    display: flex;
+    margin-top: toRem(244px);
+    width: toRem(248px);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    p {
+      margin-bottom: toRem(133px);
+      font-weight: 400;
+      font-size: toRem(20px);
+      line-height: toRem(32px);
+      text-align: center;
+      letter-spacing: toRem(4px);
+      &:first-child {
+        font-weight: 700;
+        font-size: toRem(24px);
+        line-height: toRem(26px);
+        margin-bottom: toRem(32px);
+      }
+    }
+  }
+  .close {
+    display: none;
+  }
+}
+
+//Desktop version
+@media (min-width: 700px) {
+  .fileUploaderFinish,
+  .fileUploader {
+    width: toRem(730px);
+    height: toRem(440px);
+    position: absolute;
+    left: calc(50vw - 730px / 2);
+    top: calc(50vh - 440px / 2);
+    gap: toRem(25px);
+    margin-top: toRem(1px);
+    .addMovie {
+      margin-top: toRem(60px);
+    }
+    .options {
+      .exit {
+        display: none;
+      }
+    }
+    .close {
+      display: flex;
+      position: absolute;
+      top: toRem(30px);
+      right: toRem(30px);
+      width: toRem(15px);
+      height: toRem(15px);
+    }
+  }
+  .fileUploaderFinish {
+    .options {
+      margin-bottom: toRem(40px);
+    }
+    .msg {
+      margin-top: 0;
+      height: 100%;
+      width: 100%;
+      .congrats {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          margin-top: toRem(60px);
+          margin-bottom: toRem(70px);
+          width: toRem(130px);
+        }
+        p {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

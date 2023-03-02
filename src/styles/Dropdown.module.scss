@@ -1,0 +1,88 @@
+@import "./variables.scss";
+.container {
+  display: flex;
+  background-color: #242424;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .menuContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(10px);
+    width: toRem(248px);
+    margin-top: toRem(16px);
+    height: toRem(56px);
+    background-color: #242424;
+    font-weight: 400;
+    font-size: toRem(18px);
+    line-height: toRem(22px);
+    letter-spacing: toRem(4px);
+    .menuTrigger {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: toRem(4px) toRem(6px);
+      border: none;
+      transition: box-shadow 0.4s ease;
+      vertical-align: middle;
+    }
+    .menu {
+      z-index: 2;
+      background: #242424;
+      position: absolute;
+      display: flex;
+      box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 0.47);
+      -webkit-box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 0.47);
+      -moz-box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 0.47);
+      align-items: center;
+      top: toRem(60px);
+      width: toRem(327px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: opacity 0.2s ease, transform 0.4s ease, visibility 0.4s;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          text-decoration: none;
+          color: white;
+          padding: toRem(15px) toRem(20px);
+          display: block;
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .movieList {
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//Desktop version
+@media (min-width: 700px) {
+  .container {
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-right: toRem(60px);
+    width: toRem(250px);
+    .menuContainer,
+    .movieList {
+      background: transparent;
+    }
+  }
+}

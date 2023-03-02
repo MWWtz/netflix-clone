@@ -1,0 +1,44 @@
+.container {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    background: rgb(36, 36, 36);
+    background: linear-gradient(
+      0deg,
+      rgb(36, 36, 36) 60%,
+      rgba(36, 36, 36, 0.8267682073) 63%,
+      rgba(36, 36, 36, 0.2133228291) 68%,
+      rgba(36, 36, 36, 0) 68%
+    );
+  }
+  .playingNow {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: -9;
+  }
+}
+
+//Desktop version
+@media (min-width: 700px) {
+  .container {
+    .main {
+      justify-content: space-between;
+      flex-direction: row;
+      background: transparent;
+      .playingNow {
+        height: 100vh;
+        object-position: 0% 30%;
+      }
+    }
+  }
+}

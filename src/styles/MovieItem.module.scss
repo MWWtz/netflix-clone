@@ -1,0 +1,49 @@
+@import "./variables.scss";
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: toRem(172px);
+  min-width: toRem(327px);
+  margin: toRem(20px);
+  .poster {
+    position: absolute;
+  }
+  .playGroup {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .play {
+      margin-top: toRem(55px);
+      width: toRem(48px);
+    }
+    .title {
+      margin-top: toRem(24px);
+      font-weight: 400;
+      font-size: toRem(16px);
+      line-height: toRem(16px);
+      text-align: center;
+    }
+  }
+}
+
+//Desktop version
+@media (min-width: 700px) {
+  .container {
+    height: toRem(126px);
+    .poster {
+      width: toRem(219px);
+    }
+    .playGroup {
+      height: toRem(126px);
+      .play {
+        margin-top: toRem(30px);
+        width: toRem(40px);
+      }
+    }
+  }
+}
